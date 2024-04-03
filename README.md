@@ -4,5 +4,5 @@ I independently completed freeCodeCamp's [Scientific Computing with Python](http
 
 ### To Clone This Repository
 ```
-git clone https://github.com/franpanteli/Python-Lambda-Functions-Expense-Tracker-Project-.git
+git clone https://github.com/franpanteli/Python-Lambda-Functions-Expense-Tracker-Project.git
 ```
