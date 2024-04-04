@@ -1,0 +1,117 @@
+-> We are building an expense tracker
+-> It's another function 
+-> numbers = [1, 2, 3, 4]  <- To create a list in Python 	
+	-> This project is about creating lists for expense tracking 
+	-> expenses = [] <- For an empty expense tracking list 
+
+-> Dictionaries: 
+	-> These are a builtin datatype in Python 
+	-> {'amount': 50.0, 'category': 'Food'} <- Example 
+	-> These have key-value pairs 
+	-> In the code, we are adding expenses to the dictionary, by using the .append method 
+		-> For the expense tracker 
+		-> Then adding more key value pairs to the dictionary for the expenses 
+-> When we define functions, we can use pass 
+	-> E.g: 
+
+def print_expenses(expenses):
+    pass
+	
+	-> This makes the function do nothing, in between its definition and contents have been written 
+	-> This aids in avoiding callback errors with functions like this 
+	-> Then using for loops in the definitions of those functions 
+	-> for expense in expenses: <- and then pass indented underneath this 
+	-> Then changing that pass statement to print(f'Amount: {expense}, Category: {expense}')
+
+-> To define and use a dictionary:
+	-> my_dict = {'amount': 50.0, 'category': 'Food'}
+	-> my_dict['amount'] # 50.0
+	-> These are value-key pairs 
+	-> The second line is how we access values in this dictionary 
+	-> We are interpolating 
+
+def print_expenses(expenses):
+    for expense in expenses:
+        print(f'Amount: {expense["amount"]}, Category: {expense["category"]}')
+
+	-> In this case, we can use an f string literal (like {}, .format()) to insert the value of an element stored in a dictionary into a print statement 
+
+-> Lambda functions: 
+	-> These are brief, anonymous functions 
+	-> These are ideal for simple, one-time tasks 
+	-> To define these in Python:
+		lambda x: expr
+	-> x is a parameter to be used in the expression exp 
+	-> For example, test = lambda x: x * 2
+		-> The name of this variable equals a function which takes x and multiplies it by 2 
+	-> To call this function:
+		-> print(test(3)) <- To return the value of the lambda function with an argument of 3 
+	-> Instead of having to define an entirely new function with the `def` keyword, you can just use a lambda function in one line 
+	-> Simplistic (take x and multiply it by 2)
+
+-> Combining lambda functions with the map() function:
+	-> map(lambda x: x * 2, [1, 2, 3])
+	-> Execute this function for each of the elements in this object 
+	-> Take the array which is the second argument here, and times all of the elements in it by 2 <- execute this lambda function on it 
+	-> The array this returns is the input array, after having been operated on
+
+-> The sum() function: 
+	-> Calculate the sum of the elements of the iterable object which are passed in as its argument 
+	-> Example:
+		-> test = lambda x: x * 2
+		-> print(sum(map(test, [2, 3, 5, 8]))) 
+		-> Define this lambda function called `test`, which takes an input and multiplies the elements by 2
+		-> Apply this function to this array of objects 
+		-> This returns that array multiplied by 2 
+		-> Take the elements in that array, add all of them up, and store them in this variable called `test`
+
+	-> Then in the code, we are doing this:
+
+def total_expenses(expenses):
+    lambda expense: expense['amount']
+
+		-> Define a function which takes the input and operates on its 'amount' element 
+		-> Over the next few steps, we expand this out to:
+
+def total_expenses(expenses):
+    return sum(map(lambda expense: expense['amount'], expenses))
+
+		-> Perform this function on the 'amount' element of the expenses 
+		-> Apply to to this entire `expenses` object, return the array from this 
+		-> And then sum up every element in that array and return it 
+		-> This is an example of a lambda function, in one line   
+
+-> The filter() function:
+	-> This allows us to select items from an iterable  
+	-> Based on the output of a function 
+	-> filter(my_function, my_list) <- The syntax of / for this 
+	-> Filter through this element, and select this 
+	-> We are returning the elements for which the condition is true 
+
+-> While loops:
+	-> Loops which run a portion of code until the specified condition is True 
+	-> Syntax:
+
+while condition:
+    <code>
+
+	-> You can also use elif statements after if statements  
+	-> You can use `break` inside loops, in order to prevent an infinite loop <- Although this is probably less relevant to while loops 
+
+-> The input() function: 
+	-> choice = input('Enter your choice: ')
+		-> Ask the user for an input 
+		-> Store the result that the user enters into this variable, called `choice`
+
+-> The float() function:
+	-> Take a string or an integer as an argument and return a floating point number 
+	
+__name__:
+	-> To determine if a Python script is being run as the main program 
+	-> Some Python scripts are main programs, and some of them are modules 
+	-> If __name__ equals '__main__', this means the current script is the main program and not a module 
+	-> You can write your own modules in other .py files and import them in 
+
+	-> if __name__ == '__main__':
+	    main()
+		-> This means, if the current .py file we are working in is the main one (if it's not a Python file which is for defining modules), then execute this function called main(), which applies the function we've just written   
